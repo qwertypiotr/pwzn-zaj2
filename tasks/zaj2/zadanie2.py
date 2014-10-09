@@ -1,3 +1,4 @@
+#!/opt/py3.4/bin/python3
 # -*- coding: utf-8 -*-
 
 import pickle
@@ -17,6 +18,7 @@ def load_animals(large_dataset=False):
     file = pathlib.Path(__file__).parent / file_name
     with open(str(file), 'rb') as f:
         return pickle.load(f)
+	
 
 
 def filter_animals(animal_list):
@@ -50,6 +52,12 @@ def filter_animals(animal_list):
 
     :param animal_list:
     """
+    typy_zwierzat = {z['genus'] for z in animal_list}
+    lista = list()
+    for element in typy_zwierzat:
+        
 
 if __name__ == "__main__":
     animals = load_animals()
+    print (animals[0])
+    filter_animals(animals)
